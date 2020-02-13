@@ -17,10 +17,17 @@ function initializePage() {
 /*
  * Make an AJAX call to retrieve project details and add it in
  */
-function addProjectDetails(e) {
-	// Prevent following the link
-	e.preventDefault();
+ function callBack( {
 
+ })
+
+ $("a").click(function() {
+	 addProjectDetails("a");
+ })
+
+function addProjectDetails(e) {
+	$.get("/project/:id",callBack);
+	e.preventDefault();
 	// Get the div ID, e.g., "project3"
 	var projectID = $(this).closest('.project').attr('id');
 	// get rid of 'project' from the front of the id 'project3'
